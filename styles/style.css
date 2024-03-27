@@ -1,5 +1,118 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  color: var(--clr-text-base);
+  font-family: var(--ff-main), sans-serif;
+  font-weight: normal;
+  font-size: var(--fz-base);
+  background-color: var(--clr-background);
+  background-image: var(--path-cover-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: var(--padding-base);
+  color: var(--clr-text-heading);
+  block-size: 100dvb;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  border-inline-end: 1px solid currentColor;
+  border-block-start: 1px solid currentColor;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-start: var(--padding-base);
+  inset-inline-end: var(--padding-base);
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  border-inline-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: var(--padding-base);
+  inset-inline-start: var(--padding-base);
+}
+
+.header__decor {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 25px;
+  text-transform: uppercase;
+  inset-block-start: var(--padding-base);
+  inset-inline-end: var(--padding-base);
+}
+
+.header__decor::after {
+  content: '';
+  margin-inline-end: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px currentColor;
+  background-color: currentColor;
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.header__theme-menu {
+  justify-self: flex-end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 1.5px 13px;
+  line-height: 1;
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 1);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid currentColor;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.header__title {
+  color: var(--clr-text-accent);
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--clr-text-heading);
+}
+
+.header__subtitle {
+  align-self: center;
+  font-weight: bold;
+}
+
+.title-decor {
+  color: var(--clr-text-contrast);
+  background-color: var(--clr-text-heading);
 }

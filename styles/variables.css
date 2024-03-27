@@ -1,4 +1,11 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --clr-background: #00183f;
+  --clr-text-accent: #db00ff;
+  --clr-text-base: #f1b2ce;
+  --clr-text-heading: #ff0070;
+  --clr-text-contrast: #000028;
+  --ff-main: 'IBM Plex mono';
+  --fz-base: 18px;
+  --padding-base: 10px;
+  --path-cover-image: url('../images/cover-image-dark.png');
+}
