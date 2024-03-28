@@ -1,5 +1,6 @@
 :root {
-  --clr-background: #00183f;
+  --clr-bg-accent: #ff0070;
+  --clr-box-shadow: #ff0070;
   --clr-text-accent: #db00ff;
   --clr-text-base: #f1b2ce;
   --clr-text-heading: #ff0070;

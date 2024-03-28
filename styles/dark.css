@@ -1,12 +1,12 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --clr-bg-accent: #ff0070;
+  --clr-text-accent: #db00ff;
+  --clr-text-base: #f1b2ce;
+  --clr-text-heading: #ff0070;
+  --clr-text-contrast: #000028;
+  --path-cover-image: url('../images/cover-image-dark.png');
+}
+
+.page.theme_dark .header-decor {
+  display: block;
 }
