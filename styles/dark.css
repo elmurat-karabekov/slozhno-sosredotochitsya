@@ -1,5 +1,7 @@
 .page.theme_dark {
+  --clr-bg-base: #000028;
   --clr-bg-accent: #ff0070;
+  --clr-border-btn: rgba(255 0 112 / 0.4);
   --clr-text-accent: #db00ff;
   --clr-text-base: #f1b2ce;
   --clr-text-heading: #ff0070;
@@ -7,6 +9,21 @@
   --path-cover-image: url('../images/cover-image-dark.png');
 }
 
-.page.theme_dark .header-decor {
-  display: block;
+.page.theme_dark .header__decor {
+  display: flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-bg-accent: #ff0070;
+    --clr-text-accent: #db00ff;
+    --clr-text-base: #f1b2ce;
+    --clr-text-heading: #ff0070;
+    --clr-text-contrast: #000028;
+    --path-cover-image: url('../images/cover-image-dark.png');
+  }
+
+  .page.theme_dark .header__decor {
+    display: flex;
+  }
 }

@@ -1,5 +1,7 @@
 :root {
+  --clr-bg-base: #000028;
   --clr-bg-accent: #ff0070;
+  --clr-border-btn: rgba(255 0 112 / 0.4);
   --clr-box-shadow: #ff0070;
   --clr-text-accent: #db00ff;
   --clr-text-base: #f1b2ce;
@@ -9,4 +11,5 @@
   --fz-base: 18px;
   --padding-base: 10px;
   --path-cover-image: url('../images/cover-image-dark.png');
+  --fz-text-cover: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }

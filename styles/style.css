@@ -2,8 +2,9 @@
   color: var(--clr-text-base);
   font-family: var(--ff-main), sans-serif;
   font-weight: normal;
-  line-height: 1.3;
   font-size: var(--fz-base);
+  line-height: 1.3;
+  background-color: var(--clr-bg-base);
   background-image: var(--path-cover-image);
   background-repeat: no-repeat;
   background-position: center;
@@ -20,7 +21,7 @@
   display: grid;
   padding: var(--padding-base);
   color: var(--clr-text-heading);
-  block-size: 100dvb;
+  block-size: max(668px, 100dvb);
 }
 
 .decorated-zone::before {
@@ -86,7 +87,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 1);
+  border: 1px solid var(--clr-border-btn);
 }
 
 .header__theme-menu-button:focus {
@@ -105,7 +106,7 @@
 .title {
   color: var(--clr-text-accent);
   font-weight: bold;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--fz-text-cover);
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--clr-box-shadow);
 }
@@ -121,12 +122,12 @@
 }
 
 .text-link {
-  text-shadow: 2px 2px 0 var(--clr-box-shadow);
   text-decoration: none;
+  text-shadow: 2px 2px 0 var(--clr-bg-accent);
 }
 
 .text-link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid currentColor;
 }
 
 .text-link:focus {
@@ -138,16 +139,21 @@
 }
 
 .content {
-  padding: 40px var(--padding-base);
   display: flex;
   flex-direction: column;
   gap: 50px;
+  padding: 40px var(--padding-base);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .section__title {
-  font-size: var(--fz-base);
   color: var(--clr-text-heading);
-  margin-block-end: 20px;
+  font-size: var(--fz-base);
 }
 
 .section__text-container {
@@ -156,9 +162,14 @@
   gap: 20px;
 }
 
+.section__paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .section__paragraph-subtitle {
   font-size: var(--fz-base);
-  margin-block-end: 10px;
 }
 
 .section__text-caption {
@@ -171,13 +182,13 @@
   gap: 20px;
 }
 
-.section__list-item > .section__paragraph-subtitle {
+.solutions .section__paragraph-subtitle {
   font-weight: normal;
 }
 
 .section__heading {
+  margin-block-end: -10px;
   font-size: var(--fz-base);
-  margin-block-end: var(--padding-base);
 }
 
 .section__gallery {
@@ -190,10 +201,10 @@
 }
 
 .section__gallery-picture {
-  inline-size: 100%;
-  block-size: 100%;
   object-fit: cover;
   object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .footer {
@@ -207,40 +218,39 @@
 @media (min-width: 768px) {
   :root {
     --padding-base: 20px;
+    --fz-text-cover: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header__title {
     margin-inline-start: calc(-1 * (var(--padding-base)));
   }
 
-  .title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
   .header__subtitle {
-    inline-size: calc((364 / 728) * 100%);
     justify-self: flex-end;
+    inline-size: calc((364 / 728) * 100%);
   }
 
   .content {
-    padding-block: 60px;
     gap: 80px;
+    padding-block: 60px;
   }
 
   .section__title {
     display: inline-block;
-    width: 30.76vi;
     flex-shrink: 0;
+    width: 30.76vi;
   }
 
   .reasons {
-    display: flex;
-    gap: 20px;
+    flex-direction: row;
   }
 
   .solutions {
-    display: flex;
-    gap: 20px;
+    flex-direction: row;
+  }
+
+  .section__heading {
+    margin-block-end: unset;
   }
 
   .section__gallery {
@@ -267,15 +277,17 @@
 @media (min-width: 1024px) {
   .distractions .section__text-container {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .distractions .section__paragraph {
     flex: 1;
+    min-inline-size: 314px;
   }
 
   .header__theme-menu {
-    align-self: flex-start;
     justify-self: center;
+    align-self: flex-start;
   }
 
   .header__theme-menu-list {
@@ -284,35 +296,5 @@
 
   .section__gallery {
     grid-template-rows: 25.4vi 30.8vi 42.2vi;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --clr-bg-accent: #ff0070;
-    --clr-text-accent: #db00ff;
-    --clr-text-base: #f1b2ce;
-    --clr-text-heading: #ff0070;
-    --clr-text-contrast: #000028;
-    --path-cover-image: url('../images/cover-image-dark.png');
-  }
-
-  .page.theme_dark .header-decor {
-    display: block;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --clr-bg-accent: #ff8dcb;
-    --clr-text-accent: #ffc2e6;
-    --clr-text-base: #353430;
-    --clr-text-heading: #353430;
-    --clr-text-contrast: #353430;
-    --path-cover-image: url('../images/cover-image-light.png');
-  }
-
-  .page.theme_light .header-decor {
-    display: none;
   }
 }
