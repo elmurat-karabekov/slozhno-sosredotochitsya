@@ -84,6 +84,7 @@
   line-height: 1;
   text-transform: lowercase;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
@@ -212,7 +213,7 @@
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0 var(--clr-text-heading);
+  text-shadow: 2px 2px 0 var(--clr-box-shadow);
 }
 
 @media (min-width: 768px) {
