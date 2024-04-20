@@ -85,6 +85,7 @@
   text-transform: lowercase;
   background-color: transparent;
   cursor: pointer;
+  appearance: none;
 }
 
 .header__theme-menu-button:hover {
